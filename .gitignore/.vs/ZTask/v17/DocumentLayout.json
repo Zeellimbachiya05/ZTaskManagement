@@ -1,0 +1,196 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E48928BC-2E02-4A8F-9C9E-E5B3E8302F96}|TaskManagementSystem\\ZTaskAccounts.csproj|c:\\users\\admin\\source\\repos\\taskmanagementsystem\\taskmanagementsystem\\fmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E48928BC-2E02-4A8F-9C9E-E5B3E8302F96}|TaskManagementSystem\\ZTaskAccounts.csproj|solutionrelative:taskmanagementsystem\\fmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E48928BC-2E02-4A8F-9C9E-E5B3E8302F96}|TaskManagementSystem\\ZTaskAccounts.csproj|c:\\users\\admin\\source\\repos\\taskmanagementsystem\\taskmanagementsystem\\fuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E48928BC-2E02-4A8F-9C9E-E5B3E8302F96}|TaskManagementSystem\\ZTaskAccounts.csproj|solutionrelative:taskmanagementsystem\\fuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E48928BC-2E02-4A8F-9C9E-E5B3E8302F96}|TaskManagementSystem\\ZTaskAccounts.csproj|C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\taskmanagementsystem\\fuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E48928BC-2E02-4A8F-9C9E-E5B3E8302F96}|TaskManagementSystem\\ZTaskAccounts.csproj|solutionrelative:taskmanagementsystem\\fuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E066865-ABD1-4184-9714-4A966F229543}|ZTaskModels\\ZTaskModels.csproj|c:\\users\\admin\\source\\repos\\taskmanagementsystem\\ztaskmodels\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E066865-ABD1-4184-9714-4A966F229543}|ZTaskModels\\ZTaskModels.csproj|solutionrelative:ztaskmodels\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0446B777-9A8E-4717-B673-EC9476249818}|ZTaskData\\ZTaskData.csproj|c:\\users\\admin\\source\\repos\\taskmanagementsystem\\ztaskdata\\userdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0446B777-9A8E-4717-B673-EC9476249818}|ZTaskData\\ZTaskData.csproj|solutionrelative:ztaskdata\\userdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E48928BC-2E02-4A8F-9C9E-E5B3E8302F96}|TaskManagementSystem\\ZTaskAccounts.csproj|C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\taskmanagementsystem\\fmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E48928BC-2E02-4A8F-9C9E-E5B3E8302F96}|TaskManagementSystem\\ZTaskAccounts.csproj|solutionrelative:taskmanagementsystem\\fmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E48928BC-2E02-4A8F-9C9E-E5B3E8302F96}|TaskManagementSystem\\ZTaskAccounts.csproj|C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\taskmanagementsystem\\frole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E48928BC-2E02-4A8F-9C9E-E5B3E8302F96}|TaskManagementSystem\\ZTaskAccounts.csproj|solutionrelative:taskmanagementsystem\\frole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6A2625F-A886-47CD-A953-797D623728E9}|ZTaskServices\\ZTaskServices.csproj|c:\\users\\admin\\source\\repos\\taskmanagementsystem\\ztaskservices\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6A2625F-A886-47CD-A953-797D623728E9}|ZTaskServices\\ZTaskServices.csproj|solutionrelative:ztaskservices\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E066865-ABD1-4184-9714-4A966F229543}|ZTaskModels\\ZTaskModels.csproj|c:\\users\\admin\\source\\repos\\taskmanagementsystem\\ztaskmodels\\rolemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E066865-ABD1-4184-9714-4A966F229543}|ZTaskModels\\ZTaskModels.csproj|solutionrelative:ztaskmodels\\rolemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E066865-ABD1-4184-9714-4A966F229543}|ZTaskModels\\ZTaskModels.csproj|c:\\users\\admin\\source\\repos\\taskmanagementsystem\\ztaskmodels\\departmentmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E066865-ABD1-4184-9714-4A966F229543}|ZTaskModels\\ZTaskModels.csproj|solutionrelative:ztaskmodels\\departmentmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E48928BC-2E02-4A8F-9C9E-E5B3E8302F96}|TaskManagementSystem\\ZTaskAccounts.csproj|C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\taskmanagementsystem\\fdepartment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E48928BC-2E02-4A8F-9C9E-E5B3E8302F96}|TaskManagementSystem\\ZTaskAccounts.csproj|solutionrelative:taskmanagementsystem\\fdepartment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FMain.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\TaskManagementSystem\\FMain.cs",
+              "RelativeDocumentMoniker": "TaskManagementSystem\\FMain.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\TaskManagementSystem\\FMain.cs",
+              "RelativeToolTip": "TaskManagementSystem\\FMain.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwBkAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T15:23:31.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserData.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\ZTaskData\\UserData.cs",
+              "RelativeDocumentMoniker": "ZTaskData\\UserData.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\ZTaskData\\UserData.cs",
+              "RelativeToolTip": "ZTaskData\\UserData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T15:09:03.001Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FMain.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\TaskManagementSystem\\FMain.cs",
+              "RelativeDocumentMoniker": "TaskManagementSystem\\FMain.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\TaskManagementSystem\\FMain.cs [Design]",
+              "RelativeToolTip": "TaskManagementSystem\\FMain.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T14:59:56.528Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserModel.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\ZTaskModels\\UserModel.cs",
+              "RelativeDocumentMoniker": "ZTaskModels\\UserModel.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\ZTaskModels\\UserModel.cs",
+              "RelativeToolTip": "ZTaskModels\\UserModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T14:44:53.228Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DepartmentModel.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\ZTaskModels\\DepartmentModel.cs",
+              "RelativeDocumentMoniker": "ZTaskModels\\DepartmentModel.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\ZTaskModels\\DepartmentModel.cs",
+              "RelativeToolTip": "ZTaskModels\\DepartmentModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T15:05:28.466Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FUser.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\TaskManagementSystem\\FUser.cs",
+              "RelativeDocumentMoniker": "TaskManagementSystem\\FUser.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\TaskManagementSystem\\FUser.cs",
+              "RelativeToolTip": "TaskManagementSystem\\FUser.cs",
+              "ViewState": "AgIAABkAAADAzMzMzMwUwB0AAABkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T06:17:18.785Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FUser.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\TaskManagementSystem\\FUser.cs",
+              "RelativeDocumentMoniker": "TaskManagementSystem\\FUser.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\TaskManagementSystem\\FUser.cs [Design]",
+              "RelativeToolTip": "TaskManagementSystem\\FUser.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T06:57:39.463Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserServices.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\ZTaskServices\\UserServices.cs",
+              "RelativeDocumentMoniker": "ZTaskServices\\UserServices.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\ZTaskServices\\UserServices.cs",
+              "RelativeToolTip": "ZTaskServices\\UserServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T15:08:37.756Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FRole.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\TaskManagementSystem\\FRole.cs",
+              "RelativeDocumentMoniker": "TaskManagementSystem\\FRole.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\TaskManagementSystem\\FRole.cs [Design]",
+              "RelativeToolTip": "TaskManagementSystem\\FRole.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T07:06:26.674Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RoleModel.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\ZTaskModels\\RoleModel.cs",
+              "RelativeDocumentMoniker": "ZTaskModels\\RoleModel.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\ZTaskModels\\RoleModel.cs",
+              "RelativeToolTip": "ZTaskModels\\RoleModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T15:07:05.05Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FDepartment.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\TaskManagementSystem\\FDepartment.cs",
+              "RelativeDocumentMoniker": "TaskManagementSystem\\FDepartment.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\TaskManagementSystem\\FDepartment.cs [Design]",
+              "RelativeToolTip": "TaskManagementSystem\\FDepartment.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T06:49:03.604Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
