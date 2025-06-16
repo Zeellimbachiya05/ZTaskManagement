@@ -139,6 +139,7 @@
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(405, 23);
             txtEmail.TabIndex = 9;
+            txtEmail.Leave += txtEmail_Leave;
             // 
             // txtMobile
             // 
@@ -146,6 +147,7 @@
             txtMobile.Name = "txtMobile";
             txtMobile.Size = new Size(405, 23);
             txtMobile.TabIndex = 10;
+            txtMobile.Leave += txtMobile_Leave;
             // 
             // txtNotes
             // 
@@ -179,6 +181,7 @@
             btnNew.TabIndex = 14;
             btnNew.Text = "&New";
             btnNew.UseVisualStyleBackColor = true;
+            btnNew.Click += btnNew_Click;
             // 
             // btnSave
             // 
@@ -210,11 +213,13 @@
             btnCancel.TabIndex = 17;
             btnCancel.Text = "&Cancel";
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // FUser
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = btnCancel;
             ClientSize = new Size(685, 450);
             Controls.Add(btnCancel);
             Controls.Add(btnDelete);
@@ -234,9 +239,11 @@
             Controls.Add(lblEmail);
             Controls.Add(lblName);
             Controls.Add(lblUserName);
+            KeyPreview = true;
             Name = "FUser";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "User";
+            KeyDown += FUser_KeyDown;
             ResumeLayout(false);
             PerformLayout();
         }
