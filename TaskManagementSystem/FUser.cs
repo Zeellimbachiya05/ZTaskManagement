@@ -1,20 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Microsoft.Data.SqlClient;
-using System.Configuration;
+﻿//using System.Data;
 using System.Text.RegularExpressions;
+using ZTaskModels;
+using ZTaskServices;
 
 namespace ZTaskAccounts
 {
     public partial class FUser : Form
     {
+        private readonly UserServices _userServices = new();
         public FUser()
         {
             InitializeComponent();
@@ -22,7 +15,7 @@ namespace ZTaskAccounts
 
         private void txtUserName_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtUserName.Text.Trim()))
+            if (!_userServices.ValidName(txtUserName.Text.Trim()))
             {
                 MessageBox.Show("Please Enter UserName!");
                 txtUserName.Focus();
@@ -31,33 +24,26 @@ namespace ZTaskAccounts
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["ZTaskConnection"].ConnectionString;
-
             try
             {
-                using SqlConnection con = new SqlConnection(connectionString);
+                var user = new UserModel
                 {
-                    var sql = $@"
-INSERT INTO Users ([UserName],[Name],[Email],[MobileNo],[DeptID],[RoleID],[Notes])
-Values (@UserName, @Name, @Email, @MobileNo, @DeptID, @RoleID, @Notes);
-";
-                    using SqlCommand cmd = new(sql, con);
-                    cmd.Parameters.AddWithValue("@UserName", txtUserName.Text.Trim());
-                    cmd.Parameters.AddWithValue("@Name", txtName.Text.Trim());
-                    cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
-                    cmd.Parameters.AddWithValue("@MobileNo", txtMobile.Text.Trim());
-                    cmd.Parameters.AddWithValue("@DeptID", cmbDepId.SelectedIndex != -1 ? Convert.ToInt32(cmbDepId.SelectedValue) : DBNull.Value);
-                    cmd.Parameters.AddWithValue("@RoleID", cmbRoleId.SelectedIndex != -1 ? Convert.ToInt32(cmbRoleId.SelectedValue) : DBNull.Value);
-                    cmd.Parameters.AddWithValue("@Notes", txtNotes.Text.Trim());
+                    UserName = txtUserName.Text.Trim(),
+                    Name = txtName.Text.Trim(),
+                    Email = txtEmail.Text.Trim(),
+                    Mobile = txtMobile.Text.Trim(),
+                    DepID = cmbDepId.SelectedIndex != -1 ? Convert.ToInt32(cmbDepId.SelectedValue) : (int?)null,
+                    RoleID = cmbRoleId.SelectedIndex != -1 ? Convert.ToInt32(cmbRoleId.SelectedValue) : (int?)null,
+                    Notes = txtNotes.Text.Trim()
+                };
 
-                    con.Open();
-                    int rows = cmd.ExecuteNonQuery();
-                    MessageBox.Show($"{rows} saved!");
-                }
+                _userServices.SaveUser(user);
+                MessageBox.Show("User Saved!");
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message} Save Failed!");
+                MessageBox.Show($"Error: Save Failed! {ex.Message} ");
             }
         }
 
@@ -108,7 +94,41 @@ Values (@UserName, @Name, @Email, @MobileNo, @DeptID, @RoleID, @Notes);
 
         private void btnNew_Click(object sender, EventArgs e)
         {
+            txtUserName.Text = "";
+            txtName.Text = "";
+            txtEmail.Text = "";
+            txtMobile.Text = "";
 
+            cmbDepId.SelectedIndex = -1;
+            cmbRoleId.SelectedIndex = -1;
+
+            txtNotes.Text = "";
+
+            txtUserName.Focus();
+        }
+
+        private void BindDepartments()
+        {
+            var dt = _userServices.GetDepartmentsDt();
+            cmbDepId.DataSource = dt;
+            cmbDepId.DisplayMember = "DeptName";
+            cmbDepId.ValueMember = "ID";
+            cmbDepId.SelectedIndex = -1;
+        }
+
+        private void BindRoles()
+        {
+            var dt = _userServices.GetRolesDt();
+            cmbRoleId.DataSource = dt;
+            cmbRoleId.DisplayMember = "RoleName";
+            cmbRoleId.ValueMember = "ID";
+            cmbRoleId.SelectedIndex = -1;
+        }
+
+        private void FUser_Load(object sender, EventArgs e)
+        {
+            BindDepartments();
+            BindRoles();
         }
     }
 }

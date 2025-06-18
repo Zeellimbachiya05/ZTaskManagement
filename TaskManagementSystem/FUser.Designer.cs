@@ -243,6 +243,7 @@
             Name = "FUser";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "User";
+            Load += FUser_Load;
             KeyDown += FUser_KeyDown;
             ResumeLayout(false);
             PerformLayout();

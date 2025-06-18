@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ZTaskData\ZTaskData.csproj" />
+    <ProjectReference Include="..\ZTaskModels\ZTaskModels.csproj" />
+  </ItemGroup>
+
 </Project>

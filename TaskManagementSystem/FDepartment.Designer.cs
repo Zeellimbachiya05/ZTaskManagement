@@ -63,14 +63,15 @@
             txtNotes.Location = new Point(87, 103);
             txtNotes.Name = "txtNotes";
             txtNotes.Size = new Size(259, 23);
-            txtNotes.TabIndex = 2;
+            txtNotes.TabIndex = 3;
             // 
             // txtName
             // 
             txtName.Location = new Point(85, 44);
             txtName.Name = "txtName";
             txtName.Size = new Size(259, 23);
-            txtName.TabIndex = 3;
+            txtName.TabIndex = 2;
+            txtName.Leave += txtName_Leave;
             // 
             // btnNew
             // 
@@ -81,6 +82,7 @@
             btnNew.TabIndex = 4;
             btnNew.Text = "&New";
             btnNew.UseVisualStyleBackColor = true;
+            btnNew.Click += btnNew_Click;
             // 
             // btnSave
             // 
@@ -91,6 +93,7 @@
             btnSave.TabIndex = 5;
             btnSave.Text = "&Save";
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // btnDelete
             // 
@@ -111,6 +114,7 @@
             btnCancel.TabIndex = 7;
             btnCancel.Text = "&Cancel";
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // FDepartment
             // 
@@ -127,6 +131,7 @@
             Controls.Add(lblName);
             Name = "FDepartment";
             Text = "Department";
+            KeyDown += FDepartment_KeyDown;
             ResumeLayout(false);
             PerformLayout();
         }

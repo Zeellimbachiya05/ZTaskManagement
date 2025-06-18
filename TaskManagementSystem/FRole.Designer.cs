@@ -47,6 +47,7 @@
             btnNew.TabIndex = 0;
             btnNew.Text = "&New";
             btnNew.UseVisualStyleBackColor = true;
+            btnNew.Click += btnNew_Click;
             // 
             // btnSave
             // 
@@ -57,6 +58,7 @@
             btnSave.TabIndex = 1;
             btnSave.Text = "&Save";
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // btnDelete
             // 
@@ -77,6 +79,7 @@
             btnCancel.TabIndex = 3;
             btnCancel.Text = "&Cancel";
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // lblName
             // 
@@ -104,6 +107,7 @@
             txtName.Name = "txtName";
             txtName.Size = new Size(245, 23);
             txtName.TabIndex = 6;
+            txtName.Leave += txtName_Leave;
             // 
             // txtNotes
             // 
@@ -127,6 +131,7 @@
             Controls.Add(btnNew);
             Name = "FRole";
             Text = "Role";
+            KeyDown += FRole_KeyDown;
             ResumeLayout(false);
             PerformLayout();
         }
