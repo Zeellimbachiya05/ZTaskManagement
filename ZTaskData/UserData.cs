@@ -39,7 +39,6 @@ namespace ZTaskData
 
         public void SaveUserInfo(UserModel user)
         {
-
             using SqlConnection con = new(_connectionString);
             string sql = @"INSERT INTO Users (UserName, Name, Email, MobileNo, DeptID, RoleID, Notes)
                        VALUES (@UserName, @Name, @Email, @MobileNo, @DeptID, @RoleID, @Notes)";

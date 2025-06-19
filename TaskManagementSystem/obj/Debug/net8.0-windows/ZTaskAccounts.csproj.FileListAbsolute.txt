@@ -67,3 +67,11 @@ C:\Users\ADMIN\source\repos\TaskManagementSystem\TaskManagementSystem\bin\Debug\
 C:\Users\ADMIN\source\repos\TaskManagementSystem\TaskManagementSystem\obj\Debug\net8.0-windows\ZTaskAccounts.csproj.AssemblyReference.cache
 C:\Users\ADMIN\source\repos\TaskManagementSystem\TaskManagementSystem\obj\Debug\net8.0-windows\ZTaskAcc.AB878A83.Up2Date
 C:\Users\ADMIN\source\repos\TaskManagementSystem\TaskManagementSystem\obj\Debug\net8.0-windows\ZTaskAccounts.sourcelink.json
+C:\Users\ADMIN\source\repos\TaskManagementSystem\TaskManagementSystem\bin\Debug\net8.0-windows\System.Security.Cryptography.ProtectedData.dll
+C:\Users\ADMIN\source\repos\TaskManagementSystem\TaskManagementSystem\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.Messages.dll
+C:\Users\ADMIN\source\repos\TaskManagementSystem\TaskManagementSystem\bin\Debug\net8.0-windows\ZTaskData.dll
+C:\Users\ADMIN\source\repos\TaskManagementSystem\TaskManagementSystem\bin\Debug\net8.0-windows\ZTaskModels.dll
+C:\Users\ADMIN\source\repos\TaskManagementSystem\TaskManagementSystem\bin\Debug\net8.0-windows\ZTaskServices.dll
+C:\Users\ADMIN\source\repos\TaskManagementSystem\TaskManagementSystem\bin\Debug\net8.0-windows\ZTaskModels.pdb
+C:\Users\ADMIN\source\repos\TaskManagementSystem\TaskManagementSystem\bin\Debug\net8.0-windows\ZTaskServices.pdb
+C:\Users\ADMIN\source\repos\TaskManagementSystem\TaskManagementSystem\bin\Debug\net8.0-windows\ZTaskData.pdb

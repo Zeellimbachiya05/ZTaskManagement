@@ -1,0 +1,12 @@
+C:\Users\ADMIN\source\repos\TaskManagementSystem\ZTaskModels\bin\Debug\net8.0\ZTaskModels.deps.json
+C:\Users\ADMIN\source\repos\TaskManagementSystem\ZTaskModels\bin\Debug\net8.0\ZTaskModels.dll
+C:\Users\ADMIN\source\repos\TaskManagementSystem\ZTaskModels\bin\Debug\net8.0\ZTaskModels.pdb
+C:\Users\ADMIN\source\repos\TaskManagementSystem\ZTaskModels\obj\Debug\net8.0\ZTaskModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADMIN\source\repos\TaskManagementSystem\ZTaskModels\obj\Debug\net8.0\ZTaskModels.AssemblyInfoInputs.cache
+C:\Users\ADMIN\source\repos\TaskManagementSystem\ZTaskModels\obj\Debug\net8.0\ZTaskModels.AssemblyInfo.cs
+C:\Users\ADMIN\source\repos\TaskManagementSystem\ZTaskModels\obj\Debug\net8.0\ZTaskModels.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\TaskManagementSystem\ZTaskModels\obj\Debug\net8.0\ZTaskModels.sourcelink.json
+C:\Users\ADMIN\source\repos\TaskManagementSystem\ZTaskModels\obj\Debug\net8.0\ZTaskModels.dll
+C:\Users\ADMIN\source\repos\TaskManagementSystem\ZTaskModels\obj\Debug\net8.0\refint\ZTaskModels.dll
+C:\Users\ADMIN\source\repos\TaskManagementSystem\ZTaskModels\obj\Debug\net8.0\ZTaskModels.pdb
+C:\Users\ADMIN\source\repos\TaskManagementSystem\ZTaskModels\obj\Debug\net8.0\ref\ZTaskModels.dll

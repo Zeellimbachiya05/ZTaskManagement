@@ -49,9 +49,7 @@ namespace ZTaskAccounts
 
         private void txtEmail_Leave(object sender, EventArgs e)
         {
-            string emailPattern = @"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$";
-
-            if (!Regex.IsMatch(txtEmail.Text.Trim(), emailPattern))
+            if (!_userServices.IsValidEmail(txtEmail.Text.Trim()))
             {
                 MessageBox.Show("Enter Valid Email!");
                 txtEmail.Focus();
@@ -61,7 +59,7 @@ namespace ZTaskAccounts
 
         private void txtMobile_Leave(object sender, EventArgs e)
         {
-            if (!(txtMobile.Text.Trim().Length == 10 && txtMobile.Text.Trim().All(Char.IsDigit)))
+            if (!_userServices.IsValidMobile(txtMobile.Text.Trim()))
             {
                 MessageBox.Show("Enter only 10 digit MobileNo!");
                 txtMobile.Focus();

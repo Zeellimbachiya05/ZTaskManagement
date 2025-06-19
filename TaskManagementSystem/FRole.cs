@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
 using System.Configuration;
+using ZTaskServices;
+using ZTaskModels;
 
 namespace ZTaskAccounts
 {
     public partial class FRole : Form
     {
+        private readonly RoleServices _roleServies = new();
         public FRole()
         {
             InitializeComponent();
@@ -21,33 +24,28 @@ namespace ZTaskAccounts
 
         private void txtName_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtName.Text.Trim()))
-            {
-                MessageBox.Show("Please Enter UserName!");
-                txtName.Focus();
-            }
+            
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["ZTaskConnection"].ConnectionString;
+            if (!_roleServies.IsNameValid(txtName.Text.Trim()))
+            {
+                MessageBox.Show("Please Enter UserName!");
+                txtName.Focus();
+                return;
+            }
 
             try
             {
-                using SqlConnection con = new SqlConnection(connectionString);
+                var roleModel = new RoleModel
                 {
-                    var sql = $@"
-INSERT INTO Roles ([RoleName],[Notes])
-Values (@RoleName,@Notes);
-";
-                    using SqlCommand cmd = new(sql, con);
-                    cmd.Parameters.AddWithValue("@RoleName", txtName.Text.Trim());
-                    cmd.Parameters.AddWithValue("@Notes", txtNotes.Text.Trim());
+                    Name = txtName.Text,
+                    Notes = txtNotes.Text
+                };
 
-                    con.Open();
-                    int rows = cmd.ExecuteNonQuery();
-                    MessageBox.Show($"{rows} saved!");
-                }
+                _roleServies.SaveRole(roleModel);
+                MessageBox.Show("Role Saved!");
             }
             catch (Exception ex)
             {

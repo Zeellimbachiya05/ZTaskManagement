@@ -1,0 +1,16 @@
+C:\Users\ADMIN\source\repos\TaskManagementSystem\ZTaskData\bin\Debug\net8.0\ZTaskData.deps.json
+C:\Users\ADMIN\source\repos\TaskManagementSystem\ZTaskData\bin\Debug\net8.0\ZTaskData.dll
+C:\Users\ADMIN\source\repos\TaskManagementSystem\ZTaskData\bin\Debug\net8.0\ZTaskData.pdb
+C:\Users\ADMIN\source\repos\TaskManagementSystem\ZTaskData\bin\Debug\net8.0\ZTaskModels.dll
+C:\Users\ADMIN\source\repos\TaskManagementSystem\ZTaskData\bin\Debug\net8.0\ZTaskModels.pdb
+C:\Users\ADMIN\source\repos\TaskManagementSystem\ZTaskData\obj\Debug\net8.0\ZTaskData.csproj.AssemblyReference.cache
+C:\Users\ADMIN\source\repos\TaskManagementSystem\ZTaskData\obj\Debug\net8.0\ZTaskData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADMIN\source\repos\TaskManagementSystem\ZTaskData\obj\Debug\net8.0\ZTaskData.AssemblyInfoInputs.cache
+C:\Users\ADMIN\source\repos\TaskManagementSystem\ZTaskData\obj\Debug\net8.0\ZTaskData.AssemblyInfo.cs
+C:\Users\ADMIN\source\repos\TaskManagementSystem\ZTaskData\obj\Debug\net8.0\ZTaskData.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\TaskManagementSystem\ZTaskData\obj\Debug\net8.0\ZTaskData.sourcelink.json
+C:\Users\ADMIN\source\repos\TaskManagementSystem\ZTaskData\obj\Debug\net8.0\ZTaskData.csproj.Up2Date
+C:\Users\ADMIN\source\repos\TaskManagementSystem\ZTaskData\obj\Debug\net8.0\ZTaskData.dll
+C:\Users\ADMIN\source\repos\TaskManagementSystem\ZTaskData\obj\Debug\net8.0\refint\ZTaskData.dll
+C:\Users\ADMIN\source\repos\TaskManagementSystem\ZTaskData\obj\Debug\net8.0\ZTaskData.pdb
+C:\Users\ADMIN\source\repos\TaskManagementSystem\ZTaskData\obj\Debug\net8.0\ref\ZTaskData.dll

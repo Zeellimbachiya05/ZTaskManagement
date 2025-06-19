@@ -130,6 +130,7 @@
             Controls.Add(lblNotes);
             Controls.Add(lblName);
             Name = "FDepartment";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Department";
             KeyDown += FDepartment_KeyDown;
             ResumeLayout(false);

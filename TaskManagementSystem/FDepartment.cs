@@ -1,20 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Microsoft.Data.SqlClient;
-using System.Configuration;
+﻿using ZTaskModels;
+using ZTaskServices;
+
 
 
 namespace ZTaskAccounts
 {
     public partial class FDepartment : Form
     {
+        private readonly DeptServices _deptServices = new();
         public FDepartment()
         {
             InitializeComponent();
@@ -22,7 +15,7 @@ namespace ZTaskAccounts
 
         private void txtName_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtName.Text.Trim()))
+            if (!_deptServices.IsValidName(txtName.Text.Trim()))
             {
                 MessageBox.Show("Please Enter UserName!");
                 txtName.Focus();
@@ -31,24 +24,17 @@ namespace ZTaskAccounts
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["ZTaskConnection"].ConnectionString;
-
             try
             {
-                using SqlConnection con = new SqlConnection(connectionString);
+                var department = new DepartmentModel
                 {
-                    var sql = $@"
-INSERT INTO Departments ([DeptName],[Notes])
-Values (@DeptName,@Notes);
-";
-                    using SqlCommand cmd = new(sql, con);
-                    cmd.Parameters.AddWithValue("@DeptName", txtName.Text.Trim());
-                    cmd.Parameters.AddWithValue("@Notes", txtNotes.Text.Trim());
+                    Name = txtName.Text.Trim(),
+                    Notes = txtNotes.Text.Trim()
+                };
 
-                    con.Open();
-                    int rows = cmd.ExecuteNonQuery();
-                    MessageBox.Show($"{rows} saved!");
-                }
+                _deptServices.SaveDepartment(department);
+                MessageBox.Show("Department Saved!");
+
             }
             catch (Exception ex)
             {
