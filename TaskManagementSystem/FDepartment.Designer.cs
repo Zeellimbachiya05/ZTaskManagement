@@ -71,7 +71,6 @@
             txtName.Name = "txtName";
             txtName.Size = new Size(259, 23);
             txtName.TabIndex = 2;
-            txtName.Leave += txtName_Leave;
             // 
             // btnNew
             // 
@@ -129,6 +128,7 @@
             Controls.Add(txtNotes);
             Controls.Add(lblNotes);
             Controls.Add(lblName);
+            KeyPreview = true;
             Name = "FDepartment";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Department";

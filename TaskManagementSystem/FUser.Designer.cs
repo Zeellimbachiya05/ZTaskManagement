@@ -55,7 +55,7 @@
             lblUserName.Location = new Point(61, 61);
             lblUserName.Name = "lblUserName";
             lblUserName.Size = new Size(106, 14);
-            lblUserName.TabIndex = 0;
+            lblUserName.TabIndex = 17;
             lblUserName.Text = "User Name        :";
             // 
             // lblName
@@ -65,7 +65,7 @@
             lblName.Location = new Point(61, 108);
             lblName.Name = "lblName";
             lblName.Size = new Size(108, 14);
-            lblName.TabIndex = 1;
+            lblName.TabIndex = 16;
             lblName.Text = "Name                :";
             // 
             // lblEmail
@@ -75,7 +75,7 @@
             lblEmail.Location = new Point(62, 159);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(110, 14);
-            lblEmail.TabIndex = 2;
+            lblEmail.TabIndex = 15;
             lblEmail.Text = "Email                : ";
             // 
             // lblMobile
@@ -85,7 +85,7 @@
             lblMobile.Location = new Point(59, 210);
             lblMobile.Name = "lblMobile";
             lblMobile.Size = new Size(111, 14);
-            lblMobile.TabIndex = 3;
+            lblMobile.TabIndex = 14;
             lblMobile.Text = "Mobile No          :";
             // 
             // lblDepId
@@ -95,7 +95,7 @@
             lblDepId.Location = new Point(59, 261);
             lblDepId.Name = "lblDepId";
             lblDepId.Size = new Size(111, 14);
-            lblDepId.TabIndex = 4;
+            lblDepId.TabIndex = 13;
             lblDepId.Text = "Department ID  :";
             // 
             // lblRoleId
@@ -105,7 +105,7 @@
             lblRoleId.Location = new Point(58, 312);
             lblRoleId.Name = "lblRoleId";
             lblRoleId.Size = new Size(112, 14);
-            lblRoleId.TabIndex = 5;
+            lblRoleId.TabIndex = 12;
             lblRoleId.Text = "Role ID              :";
             // 
             // lblNotes
@@ -115,7 +115,7 @@
             lblNotes.Location = new Point(62, 366);
             lblNotes.Name = "lblNotes";
             lblNotes.Size = new Size(110, 14);
-            lblNotes.TabIndex = 6;
+            lblNotes.TabIndex = 11;
             lblNotes.Text = "Notes                :";
             // 
             // txtUserName
@@ -123,38 +123,35 @@
             txtUserName.Location = new Point(173, 58);
             txtUserName.Name = "txtUserName";
             txtUserName.Size = new Size(406, 23);
-            txtUserName.TabIndex = 7;
-            txtUserName.Leave += txtUserName_Leave;
+            txtUserName.TabIndex = 0;
             // 
             // txtName
             // 
             txtName.Location = new Point(174, 105);
             txtName.Name = "txtName";
             txtName.Size = new Size(405, 23);
-            txtName.TabIndex = 8;
+            txtName.TabIndex = 1;
             // 
             // txtEmail
             // 
             txtEmail.Location = new Point(173, 156);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(405, 23);
-            txtEmail.TabIndex = 9;
-            txtEmail.Leave += txtEmail_Leave;
+            txtEmail.TabIndex = 2;
             // 
             // txtMobile
             // 
             txtMobile.Location = new Point(173, 207);
             txtMobile.Name = "txtMobile";
             txtMobile.Size = new Size(405, 23);
-            txtMobile.TabIndex = 10;
-            txtMobile.Leave += txtMobile_Leave;
+            txtMobile.TabIndex = 3;
             // 
             // txtNotes
             // 
             txtNotes.Location = new Point(173, 363);
             txtNotes.Name = "txtNotes";
             txtNotes.Size = new Size(406, 23);
-            txtNotes.TabIndex = 11;
+            txtNotes.TabIndex = 6;
             // 
             // cmbDepId
             // 
@@ -162,7 +159,7 @@
             cmbDepId.Location = new Point(173, 258);
             cmbDepId.Name = "cmbDepId";
             cmbDepId.Size = new Size(405, 23);
-            cmbDepId.TabIndex = 12;
+            cmbDepId.TabIndex = 4;
             // 
             // cmbRoleId
             // 
@@ -170,7 +167,7 @@
             cmbRoleId.Location = new Point(173, 309);
             cmbRoleId.Name = "cmbRoleId";
             cmbRoleId.Size = new Size(405, 23);
-            cmbRoleId.TabIndex = 13;
+            cmbRoleId.TabIndex = 5;
             // 
             // btnNew
             // 
@@ -178,7 +175,7 @@
             btnNew.Location = new Point(62, 415);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(75, 23);
-            btnNew.TabIndex = 14;
+            btnNew.TabIndex = 7;
             btnNew.Text = "&New";
             btnNew.UseVisualStyleBackColor = true;
             btnNew.Click += btnNew_Click;
@@ -189,7 +186,7 @@
             btnSave.Location = new Point(218, 415);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(75, 23);
-            btnSave.TabIndex = 15;
+            btnSave.TabIndex = 8;
             btnSave.Text = "&Save";
             btnSave.UseVisualStyleBackColor = true;
             btnSave.Click += btnSave_Click;
@@ -200,7 +197,7 @@
             btnDelete.Location = new Point(381, 415);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(75, 23);
-            btnDelete.TabIndex = 16;
+            btnDelete.TabIndex = 9;
             btnDelete.Text = "&Delete";
             btnDelete.UseVisualStyleBackColor = true;
             // 
@@ -210,7 +207,7 @@
             btnCancel.Location = new Point(540, 415);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 23);
-            btnCancel.TabIndex = 17;
+            btnCancel.TabIndex = 10;
             btnCancel.Text = "&Cancel";
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;

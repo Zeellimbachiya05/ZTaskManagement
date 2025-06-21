@@ -44,7 +44,7 @@
             btnNew.Location = new Point(16, 163);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(75, 23);
-            btnNew.TabIndex = 0;
+            btnNew.TabIndex = 2;
             btnNew.Text = "&New";
             btnNew.UseVisualStyleBackColor = true;
             btnNew.Click += btnNew_Click;
@@ -55,7 +55,7 @@
             btnSave.Location = new Point(107, 163);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(75, 23);
-            btnSave.TabIndex = 1;
+            btnSave.TabIndex = 3;
             btnSave.Text = "&Save";
             btnSave.UseVisualStyleBackColor = true;
             btnSave.Click += btnSave_Click;
@@ -66,7 +66,7 @@
             btnDelete.Location = new Point(198, 163);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(75, 23);
-            btnDelete.TabIndex = 2;
+            btnDelete.TabIndex = 4;
             btnDelete.Text = "&Delete";
             btnDelete.UseVisualStyleBackColor = true;
             // 
@@ -76,7 +76,7 @@
             btnCancel.Location = new Point(291, 163);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 23);
-            btnCancel.TabIndex = 3;
+            btnCancel.TabIndex = 5;
             btnCancel.Text = "&Cancel";
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
@@ -88,7 +88,7 @@
             lblName.Location = new Point(39, 49);
             lblName.Name = "lblName";
             lblName.Size = new Size(52, 14);
-            lblName.TabIndex = 4;
+            lblName.TabIndex = 3;
             lblName.Text = "Name  :";
             // 
             // lblNotes
@@ -98,7 +98,7 @@
             lblNotes.Location = new Point(39, 104);
             lblNotes.Name = "lblNotes";
             lblNotes.Size = new Size(54, 14);
-            lblNotes.TabIndex = 5;
+            lblNotes.TabIndex = 2;
             lblNotes.Text = "Notes  :";
             // 
             // txtName
@@ -106,15 +106,14 @@
             txtName.Location = new Point(97, 46);
             txtName.Name = "txtName";
             txtName.Size = new Size(245, 23);
-            txtName.TabIndex = 6;
-            txtName.Leave += txtName_Leave;
+            txtName.TabIndex = 0;
             // 
             // txtNotes
             // 
             txtNotes.Location = new Point(97, 101);
             txtNotes.Name = "txtNotes";
             txtNotes.Size = new Size(245, 23);
-            txtNotes.TabIndex = 7;
+            txtNotes.TabIndex = 1;
             // 
             // FRole
             // 
@@ -129,7 +128,9 @@
             Controls.Add(btnDelete);
             Controls.Add(btnSave);
             Controls.Add(btnNew);
+            KeyPreview = true;
             Name = "FRole";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Role";
             KeyDown += FRole_KeyDown;
             ResumeLayout(false);

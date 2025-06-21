@@ -13,17 +13,26 @@ namespace ZTaskAccounts
             InitializeComponent();
         }
 
-        private void txtUserName_Leave(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             if (!_userServices.ValidName(txtUserName.Text.Trim()))
             {
                 MessageBox.Show("Please Enter UserName!");
                 txtUserName.Focus();
+                return;
             }
-        }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
+            if (!_userServices.IsValidEmail(txtEmail.Text.Trim()))
+            {
+                MessageBox.Show("Enter Valid Email!");
+                txtEmail.Focus();
+            }
+
+            if (!_userServices.IsValidMobile(txtMobile.Text.Trim()))
+            {
+                MessageBox.Show("Enter only 10 digit MobileNo!");
+                txtMobile.Focus();
+            }
             try
             {
                 var user = new UserModel
@@ -39,6 +48,7 @@ namespace ZTaskAccounts
 
                 _userServices.SaveUser(user);
                 MessageBox.Show("User Saved!");
+                ClearForm();
 
             }
             catch (Exception ex)
@@ -47,23 +57,19 @@ namespace ZTaskAccounts
             }
         }
 
-        private void txtEmail_Leave(object sender, EventArgs e)
+        private void ClearForm()
         {
-            if (!_userServices.IsValidEmail(txtEmail.Text.Trim()))
-            {
-                MessageBox.Show("Enter Valid Email!");
-                txtEmail.Focus();
-            }
+            txtUserName.Text = "";
+            txtName.Text = "";
+            txtEmail.Text = "";
+            txtMobile.Text = "";
 
-        }
+            cmbDepId.SelectedIndex = -1;
+            cmbRoleId.SelectedIndex = -1;
 
-        private void txtMobile_Leave(object sender, EventArgs e)
-        {
-            if (!_userServices.IsValidMobile(txtMobile.Text.Trim()))
-            {
-                MessageBox.Show("Enter only 10 digit MobileNo!");
-                txtMobile.Focus();
-            }
+            txtNotes.Text = "";
+
+            txtUserName.Focus();
         }
 
         private void FUser_KeyDown(object sender, KeyEventArgs e)
@@ -92,17 +98,32 @@ namespace ZTaskAccounts
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            txtUserName.Text = "";
-            txtName.Text = "";
-            txtEmail.Text = "";
-            txtMobile.Text = "";
+            if (IsFormDirty())
+            {
+                DialogResult result = MessageBox.Show("Do you want to save the current Entry?"
+                                                      , "Save Confirmation"
+                                                      , MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
-            cmbDepId.SelectedIndex = -1;
-            cmbRoleId.SelectedIndex = -1;
+                if (result == DialogResult.Yes)
+                {
+                    btnSave.PerformClick();
+                }
+                else if (result == DialogResult.No)
+                    ClearForm();
+            }
+            else
+                ClearForm();
+        }
 
-            txtNotes.Text = "";
-
-            txtUserName.Focus();
+        private bool IsFormDirty()
+        {
+            return !string.IsNullOrWhiteSpace(txtUserName.Text.Trim()) ||
+                   !string.IsNullOrWhiteSpace(txtName.Text.Trim()) ||
+                   !string.IsNullOrWhiteSpace(txtEmail.Text.Trim()) ||
+                   !string.IsNullOrWhiteSpace(txtMobile.Text.Trim()) ||
+                   !string.IsNullOrWhiteSpace(txtNotes.Text.Trim()) ||
+                   cmbDepId.SelectedIndex != -1 ||
+                   cmbRoleId.SelectedIndex != -1;
         }
 
         private void BindDepartments()
@@ -128,5 +149,6 @@ namespace ZTaskAccounts
             BindDepartments();
             BindRoles();
         }
+
     }
 }

@@ -13,17 +13,14 @@ namespace ZTaskAccounts
             InitializeComponent();
         }
 
-        private void txtName_Leave(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             if (!_deptServices.IsValidName(txtName.Text.Trim()))
             {
                 MessageBox.Show("Please Enter UserName!");
                 txtName.Focus();
+                return;
             }
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
             try
             {
                 var department = new DepartmentModel

@@ -32,19 +32,20 @@ namespace ZTaskServices
 
         public bool IsValidEmail(string email)
         {
-            if (string.IsNullOrWhiteSpace(email))
-                return false;
-
-            string emailPattern = @"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$";
-            return Regex.IsMatch(email, emailPattern);
+            if (!string.IsNullOrWhiteSpace(email))
+            {
+                string emailPattern = @"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$";
+                return Regex.IsMatch(email, emailPattern);
+            }
+            return true;
         }
 
         public bool IsValidMobile(string mobile)
         {
-            if (string.IsNullOrWhiteSpace(mobile))
-                return false;
+            if (!string.IsNullOrWhiteSpace(mobile))
+                return mobile.Length == 10 && mobile.All(char.IsDigit);
 
-            return mobile.Length == 10 && mobile.All(char.IsDigit);
+            return true;
         }
     }
 }
