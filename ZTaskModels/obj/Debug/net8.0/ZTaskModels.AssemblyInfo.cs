@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ZTaskModels")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d344e0e98192c7dc91bebb65c17392959fd125d6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+092ad2ad5f22710c4b02cf004d3805cae41a11a6")]
 [assembly: System.Reflection.AssemblyProductAttribute("ZTaskModels")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ZTaskModels")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
