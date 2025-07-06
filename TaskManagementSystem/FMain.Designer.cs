@@ -86,8 +86,9 @@
             // taskEntryToolStripMenuItem
             // 
             taskEntryToolStripMenuItem.Name = "taskEntryToolStripMenuItem";
-            taskEntryToolStripMenuItem.Size = new Size(126, 22);
+            taskEntryToolStripMenuItem.Size = new Size(180, 22);
             taskEntryToolStripMenuItem.Text = "Task &Entry";
+            taskEntryToolStripMenuItem.Click += taskEntryToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 

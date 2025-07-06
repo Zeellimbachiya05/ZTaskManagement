@@ -1,6 +1,4 @@
-﻿//using System.Data;
-using System.Text.RegularExpressions;
-using ZTaskModels;
+﻿using ZTaskModels;
 using ZTaskServices;
 
 namespace ZTaskAccounts
@@ -15,46 +13,57 @@ namespace ZTaskAccounts
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!_userServices.ValidName(txtUserName.Text.Trim()))
-            {
-                MessageBox.Show("Please Enter UserName!");
-                txtUserName.Focus();
-                return;
-            }
-
-            if (!_userServices.IsValidEmail(txtEmail.Text.Trim()))
-            {
-                MessageBox.Show("Enter Valid Email!");
-                txtEmail.Focus();
-            }
-
-            if (!_userServices.IsValidMobile(txtMobile.Text.Trim()))
-            {
-                MessageBox.Show("Enter only 10 digit MobileNo!");
-                txtMobile.Focus();
-            }
             try
             {
-                var user = new UserModel
+                if (IsValid())
                 {
-                    UserName = txtUserName.Text.Trim(),
-                    Name = txtName.Text.Trim(),
-                    Email = txtEmail.Text.Trim(),
-                    Mobile = txtMobile.Text.Trim(),
-                    DepID = cmbDepId.SelectedIndex != -1 ? Convert.ToInt32(cmbDepId.SelectedValue) : (int?)null,
-                    RoleID = cmbRoleId.SelectedIndex != -1 ? Convert.ToInt32(cmbRoleId.SelectedValue) : (int?)null,
-                    Notes = txtNotes.Text.Trim()
-                };
+                    var user = new UserModel
+                    {
+                        UserName = txtUserName.Text.Trim(),
+                        Name = txtName.Text.Trim(),
+                        Email = txtEmail.Text.Trim(),
+                        Mobile = txtMobile.Text.Trim(),
+                        DepID = cmbDepId.SelectedIndex != -1 ? Convert.ToInt32(cmbDepId.SelectedValue) : (int?)null,
+                        RoleID = cmbRoleId.SelectedIndex != -1 ? Convert.ToInt32(cmbRoleId.SelectedValue) : (int?)null,
+                        Notes = txtNotes.Text.Trim()
+                    };
 
-                _userServices.SaveUser(user);
-                MessageBox.Show("User Saved!");
-                ClearForm();
+                    _userServices.SaveUser(user);
+                    MessageBox.Show("User Saved!");
+                    ClearForm();
+
+                }
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: Save Failed! {ex.Message} ");
             }
+        }
+
+        private bool IsValid()
+        {
+            if (!_userServices.IsValidName(txtUserName.Text.Trim()))
+            {
+                MessageBox.Show("Please Enter UserName!");
+                txtUserName.Focus();
+                return false;
+            }
+
+            if (!_userServices.IsValidEmail(txtEmail.Text.Trim()))
+            {
+                MessageBox.Show("Enter Valid Email!");
+                txtEmail.Focus();
+                return false;
+            }
+
+            if (!_userServices.IsValidMobile(txtMobile.Text.Trim()))
+            {
+                MessageBox.Show("Enter only 10 digit MobileNo!");
+                txtMobile.Focus();
+                return false;
+            }
+            return true;
         }
 
         private void ClearForm()
@@ -91,12 +100,12 @@ namespace ZTaskAccounts
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void BtnCancel_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void btnNew_Click(object sender, EventArgs e)
+        private void BtnNew_Click(object sender, EventArgs e)
         {
             if (IsFormDirty())
             {
@@ -125,6 +134,11 @@ namespace ZTaskAccounts
                    cmbDepId.SelectedIndex != -1 ||
                    cmbRoleId.SelectedIndex != -1;
         }
+        private void FUser_Load(object sender, EventArgs e)
+        {
+            BindDepartments();
+            BindRoles();
+        }
 
         private void BindDepartments()
         {
@@ -144,11 +158,6 @@ namespace ZTaskAccounts
             cmbRoleId.SelectedIndex = -1;
         }
 
-        private void FUser_Load(object sender, EventArgs e)
-        {
-            BindDepartments();
-            BindRoles();
-        }
 
     }
 }

@@ -35,5 +35,14 @@ namespace TaskManagementSystem
             };
             fRole.Show();
         }
+
+        private void taskEntryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FTask fTask = new()
+            {
+                MdiParent = this
+            };
+            fTask.Show();
+        }
     }
 }

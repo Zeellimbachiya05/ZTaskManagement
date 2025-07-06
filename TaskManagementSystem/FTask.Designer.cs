@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             lblCode = new Label();
-            cmbTaskId = new ComboBox();
+            cmbCode = new ComboBox();
             lblTitle = new Label();
             txtTitle = new TextBox();
             lblDescription = new Label();
@@ -65,17 +65,16 @@
             lblCode.Location = new Point(30, 23);
             lblCode.Name = "lblCode";
             lblCode.Size = new Size(126, 14);
-            lblCode.TabIndex = 0;
             lblCode.Text = "Code                     :";
             // 
-            // cmbTaskId
+            // cmbCode
             // 
-            cmbTaskId.Font = new Font("Tahoma", 9F);
-            cmbTaskId.FormattingEnabled = true;
-            cmbTaskId.Location = new Point(159, 20);
-            cmbTaskId.Name = "cmbTaskId";
-            cmbTaskId.Size = new Size(755, 22);
-            cmbTaskId.TabIndex = 1;
+            cmbCode.Font = new Font("Tahoma", 9F);
+            cmbCode.FormattingEnabled = true;
+            cmbCode.Location = new Point(159, 20);
+            cmbCode.Name = "cmbCode";
+            cmbCode.Size = new Size(755, 22);
+            cmbCode.TabIndex = 0;
             // 
             // lblTitle
             // 
@@ -84,7 +83,6 @@
             lblTitle.Location = new Point(30, 69);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(129, 14);
-            lblTitle.TabIndex = 2;
             lblTitle.Text = "Title                      : ";
             // 
             // txtTitle
@@ -93,7 +91,7 @@
             txtTitle.Location = new Point(159, 66);
             txtTitle.Name = "txtTitle";
             txtTitle.Size = new Size(755, 22);
-            txtTitle.TabIndex = 3;
+            txtTitle.TabIndex = 1;
             // 
             // lblDescription
             // 
@@ -102,7 +100,6 @@
             lblDescription.Location = new Point(33, 118);
             lblDescription.Name = "lblDescription";
             lblDescription.Size = new Size(128, 14);
-            lblDescription.TabIndex = 4;
             lblDescription.Text = "Description           : ";
             // 
             // rtxDescription
@@ -111,7 +108,7 @@
             rtxDescription.Location = new Point(159, 118);
             rtxDescription.Name = "rtxDescription";
             rtxDescription.Size = new Size(755, 55);
-            rtxDescription.TabIndex = 5;
+            rtxDescription.TabIndex = 2;
             rtxDescription.Text = "";
             // 
             // lblPriority
@@ -121,7 +118,6 @@
             lblPriority.Location = new Point(33, 286);
             lblPriority.Name = "lblPriority";
             lblPriority.Size = new Size(124, 14);
-            lblPriority.TabIndex = 6;
             lblPriority.Text = "Priority                 :";
             // 
             // lblAssignedTo
@@ -131,7 +127,6 @@
             lblAssignedTo.Location = new Point(33, 202);
             lblAssignedTo.Name = "lblAssignedTo";
             lblAssignedTo.Size = new Size(125, 14);
-            lblAssignedTo.TabIndex = 7;
             lblAssignedTo.Text = "Assigned To          :";
             // 
             // lblStatus
@@ -141,7 +136,6 @@
             lblStatus.Location = new Point(458, 286);
             lblStatus.Name = "lblStatus";
             lblStatus.Size = new Size(140, 14);
-            lblStatus.TabIndex = 8;
             lblStatus.Text = "Status                      :";
             // 
             // lblDepartment
@@ -151,7 +145,6 @@
             lblDepartment.Location = new Point(458, 202);
             lblDepartment.Name = "lblDepartment";
             lblDepartment.Size = new Size(141, 14);
-            lblDepartment.TabIndex = 9;
             lblDepartment.Text = "Department              :";
             // 
             // lblDueDate
@@ -161,7 +154,6 @@
             lblDueDate.Location = new Point(458, 244);
             lblDueDate.Name = "lblDueDate";
             lblDueDate.Size = new Size(140, 14);
-            lblDueDate.TabIndex = 10;
             lblDueDate.Text = "Due Date                  :";
             // 
             // lblAssignedDate
@@ -171,7 +163,6 @@
             lblAssignedDate.Location = new Point(33, 244);
             lblAssignedDate.Name = "lblAssignedDate";
             lblAssignedDate.Size = new Size(123, 14);
-            lblAssignedDate.TabIndex = 11;
             lblAssignedDate.Text = "Assigned Date      :";
             // 
             // cmbPriority
@@ -180,8 +171,8 @@
             cmbPriority.FormattingEnabled = true;
             cmbPriority.Location = new Point(159, 283);
             cmbPriority.Name = "cmbPriority";
-            cmbPriority.Size = new Size(121, 22);
-            cmbPriority.TabIndex = 12;
+            cmbPriority.Size = new Size(258, 22);
+            cmbPriority.TabIndex = 7;
             // 
             // cmbStatus
             // 
@@ -189,8 +180,8 @@
             cmbStatus.FormattingEnabled = true;
             cmbStatus.Location = new Point(602, 283);
             cmbStatus.Name = "cmbStatus";
-            cmbStatus.Size = new Size(121, 22);
-            cmbStatus.TabIndex = 13;
+            cmbStatus.Size = new Size(276, 22);
+            cmbStatus.TabIndex = 8;
             // 
             // cmbAssignedTo
             // 
@@ -198,8 +189,8 @@
             cmbAssignedTo.FormattingEnabled = true;
             cmbAssignedTo.Location = new Point(159, 199);
             cmbAssignedTo.Name = "cmbAssignedTo";
-            cmbAssignedTo.Size = new Size(121, 22);
-            cmbAssignedTo.TabIndex = 14;
+            cmbAssignedTo.Size = new Size(258, 22);
+            cmbAssignedTo.TabIndex = 3;
             // 
             // cmbDepartment
             // 
@@ -207,24 +198,24 @@
             cmbDepartment.FormattingEnabled = true;
             cmbDepartment.Location = new Point(602, 199);
             cmbDepartment.Name = "cmbDepartment";
-            cmbDepartment.Size = new Size(121, 22);
-            cmbDepartment.TabIndex = 15;
+            cmbDepartment.Size = new Size(276, 22);
+            cmbDepartment.TabIndex = 4;
             // 
             // dtpAssignedDate
             // 
             dtpAssignedDate.Font = new Font("Tahoma", 9F);
             dtpAssignedDate.Location = new Point(159, 238);
             dtpAssignedDate.Name = "dtpAssignedDate";
-            dtpAssignedDate.Size = new Size(200, 22);
-            dtpAssignedDate.TabIndex = 16;
+            dtpAssignedDate.Size = new Size(164, 22);
+            dtpAssignedDate.TabIndex = 5;
             // 
             // dtpDueDate
             // 
             dtpDueDate.Font = new Font("Tahoma", 9F);
             dtpDueDate.Location = new Point(602, 238);
             dtpDueDate.Name = "dtpDueDate";
-            dtpDueDate.Size = new Size(200, 22);
-            dtpDueDate.TabIndex = 17;
+            dtpDueDate.Size = new Size(157, 22);
+            dtpDueDate.TabIndex = 6;
             // 
             // lblCompletionDate
             // 
@@ -233,7 +224,6 @@
             lblCompletionDate.Location = new Point(458, 343);
             lblCompletionDate.Name = "lblCompletionDate";
             lblCompletionDate.Size = new Size(142, 14);
-            lblCompletionDate.TabIndex = 18;
             lblCompletionDate.Text = "Completion Date       :";
             // 
             // lblRemainderDate
@@ -243,7 +233,6 @@
             lblRemainderDate.Location = new Point(33, 343);
             lblRemainderDate.Name = "lblRemainderDate";
             lblRemainderDate.Size = new Size(125, 14);
-            lblRemainderDate.TabIndex = 19;
             lblRemainderDate.Text = "Remainder Date    :";
             // 
             // lblNotes
@@ -253,7 +242,6 @@
             lblNotes.Location = new Point(33, 397);
             lblNotes.Name = "lblNotes";
             lblNotes.Size = new Size(126, 14);
-            lblNotes.TabIndex = 20;
             lblNotes.Text = "Notes                    :";
             // 
             // dtpCompletionDate
@@ -261,16 +249,16 @@
             dtpCompletionDate.Font = new Font("Tahoma", 9F);
             dtpCompletionDate.Location = new Point(602, 337);
             dtpCompletionDate.Name = "dtpCompletionDate";
-            dtpCompletionDate.Size = new Size(200, 22);
-            dtpCompletionDate.TabIndex = 21;
+            dtpCompletionDate.Size = new Size(157, 22);
+            dtpCompletionDate.TabIndex = 10;
             // 
             // dtpRemainderDate
             // 
             dtpRemainderDate.Font = new Font("Tahoma", 9F);
             dtpRemainderDate.Location = new Point(159, 337);
             dtpRemainderDate.Name = "dtpRemainderDate";
-            dtpRemainderDate.Size = new Size(200, 22);
-            dtpRemainderDate.TabIndex = 22;
+            dtpRemainderDate.Size = new Size(164, 22);
+            dtpRemainderDate.TabIndex = 9;
             // 
             // txtNotes
             // 
@@ -278,7 +266,7 @@
             txtNotes.Location = new Point(159, 394);
             txtNotes.Name = "txtNotes";
             txtNotes.Size = new Size(743, 22);
-            txtNotes.TabIndex = 23;
+            txtNotes.TabIndex = 11;
             // 
             // btnNew
             // 
@@ -286,9 +274,10 @@
             btnNew.Location = new Point(106, 449);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(75, 23);
-            btnNew.TabIndex = 24;
+            btnNew.TabIndex = 13;
             btnNew.Text = "&New";
             btnNew.UseVisualStyleBackColor = true;
+            btnNew.Click += BtnNew_Click;
             // 
             // btnSave
             // 
@@ -296,7 +285,7 @@
             btnSave.Location = new Point(342, 449);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(75, 23);
-            btnSave.TabIndex = 25;
+            btnSave.TabIndex = 12;
             btnSave.Text = "&Save";
             btnSave.UseVisualStyleBackColor = true;
             btnSave.Click += btnSave_Click;
@@ -307,7 +296,7 @@
             btnDelete.Location = new Point(566, 449);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(75, 23);
-            btnDelete.TabIndex = 26;
+            btnDelete.TabIndex = 14;
             btnDelete.Text = "&Delete";
             btnDelete.UseVisualStyleBackColor = true;
             // 
@@ -317,9 +306,10 @@
             btnCancel.Location = new Point(796, 449);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 23);
-            btnCancel.TabIndex = 27;
+            btnCancel.TabIndex = 15;
             btnCancel.Text = "&Cancel";
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += BtnCancel_Click;
             // 
             // FTask
             // 
@@ -352,10 +342,14 @@
             Controls.Add(lblDescription);
             Controls.Add(txtTitle);
             Controls.Add(lblTitle);
-            Controls.Add(cmbTaskId);
+            Controls.Add(cmbCode);
             Controls.Add(lblCode);
+            KeyPreview = true;
             Name = "FTask";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Task Entry";
+            Load += FTask_Load;
+            KeyDown += FTask_KeyDown;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -363,7 +357,7 @@
         #endregion
 
         private Label lblCode;
-        private ComboBox cmbTaskId;
+        private ComboBox cmbCode;
         private Label lblTitle;
         private TextBox txtTitle;
         private Label lblDescription;

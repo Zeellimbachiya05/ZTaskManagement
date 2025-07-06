@@ -25,7 +25,7 @@ namespace ZTaskServices
             _userData.SaveUserInfo(user);
         }
 
-        public bool ValidName(string userName)
+        public bool IsValidName(string userName)
         {
             return !string.IsNullOrWhiteSpace(userName);
         }

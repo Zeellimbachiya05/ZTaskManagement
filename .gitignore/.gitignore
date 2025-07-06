@@ -1,10 +1,8 @@
 # Ignore Visual Studio generated files
-.vs/
 *.user
 *.suo
 
 # Ignore build results
-bin/
 obj/
 *.exe
 *.dll

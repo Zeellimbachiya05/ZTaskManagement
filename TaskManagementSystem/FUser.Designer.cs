@@ -178,7 +178,7 @@
             btnNew.TabIndex = 7;
             btnNew.Text = "&New";
             btnNew.UseVisualStyleBackColor = true;
-            btnNew.Click += btnNew_Click;
+            btnNew.Click += BtnNew_Click;
             // 
             // btnSave
             // 
@@ -210,7 +210,7 @@
             btnCancel.TabIndex = 10;
             btnCancel.Text = "&Cancel";
             btnCancel.UseVisualStyleBackColor = true;
-            btnCancel.Click += btnCancel_Click;
+            btnCancel.Click += BtnCancel_Click;
             // 
             // FUser
             // 
