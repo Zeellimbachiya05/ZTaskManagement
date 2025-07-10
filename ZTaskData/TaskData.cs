@@ -12,29 +12,36 @@ namespace ZTaskData
 {
     public class TaskData
     {
-        private DataTable _dt = new();
         private readonly string _connectionString = ConfigurationManager.ConnectionStrings["ZTaskConnection"].ConnectionString;
 
         public DataTable GetDepartmentsDt()
         {
+            var dt = new DataTable();
             using (SqlConnection conn = new(_connectionString))
             {
-                string query = "SELECT ID, DeptName FROM Departments";
+                string query = $@"
+SELECT ID, DeptName FROM Departments
+WHERE DeptName IS NOT NULL AND LTRIM(RTRIM(DeptName)) <> ''
+";
                 SqlDataAdapter adapter = new(query, conn);
-                adapter.Fill(_dt);
+                adapter.Fill(dt);
             }
-            return _dt;
+            return dt;
         }
 
         public DataTable GetUsersDt()
         {
+            var dt = new DataTable();
             using (SqlConnection conn = new(_connectionString))
             {
-                string query = "SELECT ID, UserName, Name FROM Users";
+                string query = $@"
+SELECT ID, UserName, Name FROM Users
+WHERE Name IS NOT NULL AND LTRIM(RTRIM(Name)) <> ''
+";
                 SqlDataAdapter adapter = new(query, conn);
-                adapter.Fill(_dt);
+                adapter.Fill(dt);
             }
-            return _dt;
+            return dt;
         }
 
         public void SaveTaskInfo(TaskModel task)
@@ -49,8 +56,8 @@ namespace ZTaskData
             cmd.Parameters.AddWithValue("@Code", task.Code);
             cmd.Parameters.AddWithValue("@Title", task.Title);
             cmd.Parameters.AddWithValue("@Description", (object?)task.Description ?? DBNull.Value);
-            cmd.Parameters.AddWithValue("@AssignedToUser", (int?)task.AssignedToUser  == 0 ? DBNull.Value : task.AssignedToUser);
-            cmd.Parameters.AddWithValue("@Department", (int?)task.Department == 0 ? DBNull.Value : task.Department);
+            cmd.Parameters.AddWithValue("@AssignedToUser", (int?)task.AssignedToUser  == 0 ? DBNull.Value : (int)task.AssignedToUser);
+            cmd.Parameters.AddWithValue("@Department", (int?)task.Department == 0 ? DBNull.Value : (int)task.Department);
             cmd.Parameters.AddWithValue("@AssignedDate", (object?)task.AssignedDate ?? DBNull.Value);
             cmd.Parameters.AddWithValue("@DueDate", (object?)task.DueDate ?? DBNull.Value);
             cmd.Parameters.AddWithValue("@Priority", (object?)task.Priority ?? DBNull.Value);
@@ -65,13 +72,14 @@ namespace ZTaskData
 
         public DataTable GetCodesDt()
         {
+            var dt = new DataTable();
             using (SqlConnection conn = new(_connectionString))
             {
                 string query = "SELECT Code FROM Tasks";
                 SqlDataAdapter adapter = new(query, conn);
-                adapter.Fill(_dt);
+                adapter.Fill(dt);
             }
-            return _dt;
+            return dt;
         }
     }
 }

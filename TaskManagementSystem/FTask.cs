@@ -161,10 +161,10 @@ namespace ZTaskAccounts
         private void BindCodes()
         {
             var dt = _taskServices.GetCodesDt();
-            cmbAssignedTo.DataSource = dt;
-            cmbAssignedTo.DisplayMember = "Code";
-            cmbAssignedTo.ValueMember = "Code";
-            cmbAssignedTo.SelectedIndex = -1;
+            cmbCode.DataSource = dt;
+            cmbCode.DisplayMember = "Code";
+            cmbCode.ValueMember = "Code";
+            cmbCode.SelectedIndex = -1;
         }
 
         private void BindStatusList()
@@ -181,20 +181,26 @@ namespace ZTaskAccounts
 
         private void BindUser()
         {
+            cmbAssignedTo.DataSource = null;
+            cmbAssignedTo.Items.Clear();
             var dt = _taskServices.GetUsersDt();
             cmbAssignedTo.DataSource = dt;
             cmbAssignedTo.DisplayMember = "Name";
             cmbAssignedTo.ValueMember = "ID";
             cmbAssignedTo.SelectedIndex = -1;
+            cmbAssignedTo.DropDownHeight = cmbAssignedTo.ItemHeight * (cmbAssignedTo.Items.Count + 1);
         }
 
         private void BindDepartments()
         {
+            cmbDepartment.DataSource = null;
+            cmbDepartment.Items.Clear();
             var dt = _taskServices.GetDepartmentsDt();
             cmbDepartment.DataSource = dt;
             cmbDepartment.DisplayMember = "DeptName";
             cmbDepartment.ValueMember = "ID";
             cmbDepartment.SelectedIndex = -1;
+            cmbDepartment.DropDownHeight = cmbDepartment.ItemHeight * (cmbDepartment.Items.Count + 1);
         }
 
         public enum TaskPriority
