@@ -1,15 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Microsoft.Data.SqlClient;
-using System.Configuration;
-using ZTaskServices;
+﻿using ZTaskServices;
 using ZTaskModels;
 
 namespace ZTaskAccounts
@@ -22,6 +11,7 @@ namespace ZTaskAccounts
             InitializeComponent();
         }
 
+        #region Event Handlers
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (!_roleServies.IsNameValid(txtName.Text.Trim()))
@@ -78,5 +68,6 @@ namespace ZTaskAccounts
             txtNotes.Text = "";
             txtName.Focus();
         }
+        #endregion
     }
 }

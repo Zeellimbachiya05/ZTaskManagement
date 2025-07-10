@@ -7,29 +7,30 @@ namespace ZTaskData
 {
     public class UserData
     {
-        private DataTable _dt = new();
         private readonly string _connectionString = ConfigurationManager.ConnectionStrings["ZTaskConnection"].ConnectionString;
 
         public DataTable GetDepartmentsDt()
         {
-            using (SqlConnection conn = new SqlConnection(_connectionString))
-            {
-                string query = "SELECT ID, DeptName FROM Departments";
-                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-                adapter.Fill(_dt);
-            }
-            return _dt;
+            var sql = "SELECT ID, DeptName FROM Departments";
+            return GetDt(sql);
         }
 
         public DataTable GetRolesDt()
         {
+            var sql = "SELECT ID,RoleName FROM Roles";
+            return GetDt(sql);
+        }
+
+        private DataTable GetDt(string sql)
+        {
+            var dt = new DataTable();
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
-                var sql = "SELECT ID,RoleName FROM Roles";
                 var adapter = new SqlDataAdapter(sql, conn);
-                adapter.Fill(_dt);
+                adapter.Fill(dt);
             }
-            return _dt;
+
+            return dt;
         }
 
         public void SaveUserInfo(UserModel user)

@@ -20,9 +20,34 @@ namespace ZTaskAccounts
         public FTask()
         {
             InitializeComponent();
+
+            InitializeForm();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void InitializeForm()
+        {
+            DelegateEventHandlers();
+        }
+
+        private void DelegateEventHandlers()
+        {
+            btnSave.Click -= BtnSave_Click;
+            btnSave.Click += BtnSave_Click;
+            btnCancel.Click -= BtnCancel_Click;
+            btnCancel.Click += BtnCancel_Click;
+
+            cmbCode.SelectedValueChanged -= CmbCode_ValueSelected;
+        }
+
+        #region Event Handlers
+
+        private void CmbCode_ValueSelected(object sender, EventArgs e)
+        {
+            var code = cmbCode.Text.Trim();
+            var dt = _taskServices.GetTasks();
+        }
+
+        private void BtnSave_Click(object sender, EventArgs e)
         {
             try
             {
@@ -53,45 +78,6 @@ namespace ZTaskAccounts
                 MessageBox.Show($"Error: Save Failed! {ex.Message} ");
             }
 
-        }
-
-        private void ClearForm()
-        {
-            cmbCode.Text = string.Empty;
-            txtTitle.Text = string.Empty;
-            rtxDescription.Text = string.Empty;
-
-            cmbAssignedTo.Text = string.Empty;
-            cmbDepartment.Text = string.Empty;
-            dtpAssignedDate.Value = DateTime.Today;
-            dtpDueDate.Value = DateTime.Today;
-            cmbPriority.Text = string.Empty;
-            cmbStatus.Text = string.Empty;
-
-            dtpRemainderDate.Value = DateTime.Today;
-            dtpCompletionDate.Value = DateTime.Today;
-            txtNotes.Text = "";
-
-            cmbCode.Focus();
-        }
-
-        private bool IsValid()
-        {
-            if (!_taskServices.IsValidData(cmbCode.Text.Trim()))
-            {
-                MessageBox.Show("Please Enter Code!");
-                cmbCode.Focus();
-                return false;
-            }
-
-            if (!_taskServices.IsValidData(txtTitle.Text.Trim()))
-            {
-                MessageBox.Show("Please Enter Title!");
-                txtTitle.Focus();
-                return false;
-            }
-
-            return true;
         }
 
         private void FTask_KeyDown(object sender, KeyEventArgs e)
@@ -136,7 +122,58 @@ namespace ZTaskAccounts
             else
                 ClearForm();
         }
+        
+        private void FTask_Load(object sender, EventArgs e)
+        {
+            BindCodes();
+            BindUser();
+            BindDepartments();
+            BindPriorityList();
+            BindStatusList();
+        }
 
+        #endregion
+
+        #region Private Members
+        private void ClearForm()
+        {
+            cmbCode.Text = string.Empty;
+            txtTitle.Text = string.Empty;
+            rtxDescription.Text = string.Empty;
+
+            cmbAssignedTo.Text = string.Empty;
+            cmbDepartment.Text = string.Empty;
+            dtpAssignedDate.Value = DateTime.Today;
+            dtpDueDate.Value = DateTime.Today;
+            cmbPriority.Text = string.Empty;
+            cmbStatus.Text = string.Empty;
+
+            dtpRemainderDate.Value = DateTime.Today;
+            dtpCompletionDate.Value = DateTime.Today;
+            txtNotes.Text = "";
+
+            cmbCode.Focus();
+        }
+
+        private bool IsValid()
+        {
+            if (!_taskServices.IsValidData(cmbCode.Text.Trim()))
+            {
+                MessageBox.Show("Please Enter Code!");
+                cmbCode.Focus();
+                return false;
+            }
+
+            if (!_taskServices.IsValidData(txtTitle.Text.Trim()))
+            {
+                MessageBox.Show("Please Enter Title!");
+                txtTitle.Focus();
+                return false;
+            }
+
+            return true;
+        }
+        
         private bool IsFormDirty()
         {
             return !string.IsNullOrWhiteSpace(cmbCode.Text.Trim()) ||
@@ -147,15 +184,6 @@ namespace ZTaskAccounts
                    !string.IsNullOrWhiteSpace(cmbPriority.Text.Trim()) ||
                    !string.IsNullOrWhiteSpace(cmbStatus.Text.Trim()) ||
                    !string.IsNullOrWhiteSpace(txtNotes.Text.Trim());
-        }
-
-        private void FTask_Load(object sender, EventArgs e)
-        {
-            BindCodes();
-            BindUser();
-            BindDepartments();
-            BindPriorityList();
-            BindStatusList();
         }
 
         private void BindCodes()
@@ -203,6 +231,9 @@ namespace ZTaskAccounts
             cmbDepartment.DropDownHeight = cmbDepartment.ItemHeight * (cmbDepartment.Items.Count + 1);
         }
 
+        #endregion
+
+        #region Enums
         public enum TaskPriority
         {
             Low,
@@ -218,6 +249,10 @@ namespace ZTaskAccounts
             OnHold,
             Cancelled
         }
+        #endregion
+
+
+
 
     }
 }

@@ -9,8 +9,10 @@ namespace ZTaskAccounts
         public FUser()
         {
             InitializeComponent();
+
         }
 
+        #region Event Handlers
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -39,46 +41,6 @@ namespace ZTaskAccounts
             {
                 MessageBox.Show($"Error: Save Failed! {ex.Message} ");
             }
-        }
-
-        private bool IsValid()
-        {
-            if (!_userServices.IsValidName(txtUserName.Text.Trim()))
-            {
-                MessageBox.Show("Please Enter UserName!");
-                txtUserName.Focus();
-                return false;
-            }
-
-            if (!_userServices.IsValidEmail(txtEmail.Text.Trim()))
-            {
-                MessageBox.Show("Enter Valid Email!");
-                txtEmail.Focus();
-                return false;
-            }
-
-            if (!_userServices.IsValidMobile(txtMobile.Text.Trim()))
-            {
-                MessageBox.Show("Enter only 10 digit MobileNo!");
-                txtMobile.Focus();
-                return false;
-            }
-            return true;
-        }
-
-        private void ClearForm()
-        {
-            txtUserName.Text = "";
-            txtName.Text = "";
-            txtEmail.Text = "";
-            txtMobile.Text = "";
-
-            cmbDepId.SelectedIndex = -1;
-            cmbRoleId.SelectedIndex = -1;
-
-            txtNotes.Text = "";
-
-            txtUserName.Focus();
         }
 
         private void FUser_KeyDown(object sender, KeyEventArgs e)
@@ -124,6 +86,53 @@ namespace ZTaskAccounts
                 ClearForm();
         }
 
+        private void FUser_Load(object sender, EventArgs e)
+        {
+            BindDepartments();
+            BindRoles();
+        }
+        #endregion
+
+        #region private methods
+        private bool IsValid()
+        {
+            if (!_userServices.IsValidName(txtUserName.Text.Trim()))
+            {
+                MessageBox.Show("Please Enter UserName!");
+                txtUserName.Focus();
+                return false;
+            }
+
+            if (!_userServices.IsValidEmail(txtEmail.Text.Trim()))
+            {
+                MessageBox.Show("Enter Valid Email!");
+                txtEmail.Focus();
+                return false;
+            }
+
+            if (!_userServices.IsValidMobile(txtMobile.Text.Trim()))
+            {
+                MessageBox.Show("Enter only 10 digit MobileNo!");
+                txtMobile.Focus();
+                return false;
+            }
+            return true;
+        }
+
+        private void ClearForm()
+        {
+            txtUserName.Text = "";
+            txtName.Text = "";
+            txtEmail.Text = "";
+            txtMobile.Text = "";
+
+            cmbDepId.SelectedIndex = -1;
+            cmbRoleId.SelectedIndex = -1;
+
+            txtNotes.Text = "";
+
+            txtUserName.Focus();
+        }
         private bool IsFormDirty()
         {
             return !string.IsNullOrWhiteSpace(txtUserName.Text.Trim()) ||
@@ -134,12 +143,6 @@ namespace ZTaskAccounts
                    cmbDepId.SelectedIndex != -1 ||
                    cmbRoleId.SelectedIndex != -1;
         }
-        private void FUser_Load(object sender, EventArgs e)
-        {
-            BindDepartments();
-            BindRoles();
-        }
-
         private void BindDepartments()
         {
             var dt = _userServices.GetDepartmentsDt();
@@ -158,6 +161,7 @@ namespace ZTaskAccounts
             cmbRoleId.SelectedIndex = -1;
         }
 
+        #endregion
 
     }
 }

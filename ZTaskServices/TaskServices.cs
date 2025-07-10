@@ -15,12 +15,17 @@ namespace ZTaskServices
 
         public DataTable GetCodesDt()
         {
-            return _taskData.GetCodesDt();
+            return _taskData.GetTasksCodesDt();
         }
 
         public DataTable GetDepartmentsDt()
         {
             return _taskData.GetDepartmentsDt();
+        }
+
+        public DataTable GetTasks()
+        {
+            return _taskData.GetTasks();
         }
 
         public DataTable GetUsersDt()

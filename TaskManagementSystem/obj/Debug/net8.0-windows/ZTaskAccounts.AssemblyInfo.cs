@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ZTaskAccounts")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ed918a89365db20cf94f9fb7912abbcc0cf2f285")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5d60c17c39967d1490351ac4ab13365ff80a4da1")]
 [assembly: System.Reflection.AssemblyProductAttribute("ZTaskAccounts")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ZTaskAccounts")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

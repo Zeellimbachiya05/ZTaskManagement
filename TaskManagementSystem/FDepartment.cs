@@ -13,6 +13,7 @@ namespace ZTaskAccounts
             InitializeComponent();
         }
 
+        #region Event Handlers
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (!_deptServices.IsValidName(txtName.Text.Trim()))
@@ -69,5 +70,6 @@ namespace ZTaskAccounts
             txtNotes.Text = "";
             txtName.Focus();
         }
+        #endregion
     }
 }

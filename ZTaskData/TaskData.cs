@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
 using System.Configuration;
 using System.Data;
 using ZTaskModels;
@@ -16,32 +11,20 @@ namespace ZTaskData
 
         public DataTable GetDepartmentsDt()
         {
-            var dt = new DataTable();
-            using (SqlConnection conn = new(_connectionString))
-            {
-                string query = $@"
+            var sql = $@"
 SELECT ID, DeptName FROM Departments
 WHERE DeptName IS NOT NULL AND LTRIM(RTRIM(DeptName)) <> ''
 ";
-                SqlDataAdapter adapter = new(query, conn);
-                adapter.Fill(dt);
-            }
-            return dt;
+            return GetDt(sql);
         }
 
         public DataTable GetUsersDt()
         {
-            var dt = new DataTable();
-            using (SqlConnection conn = new(_connectionString))
-            {
-                string query = $@"
+            var sql = $@"
 SELECT ID, UserName, Name FROM Users
 WHERE Name IS NOT NULL AND LTRIM(RTRIM(Name)) <> ''
 ";
-                SqlDataAdapter adapter = new(query, conn);
-                adapter.Fill(dt);
-            }
-            return dt;
+            return GetDt(sql);
         }
 
         public void SaveTaskInfo(TaskModel task)
@@ -70,15 +53,27 @@ WHERE Name IS NOT NULL AND LTRIM(RTRIM(Name)) <> ''
             cmd.ExecuteNonQuery();
         }
 
-        public DataTable GetCodesDt()
+        public DataTable GetTasksCodesDt()
+        {
+            var sql = "SELECT Code FROM Tasks";
+            return GetDt(sql);
+        }
+
+        public DataTable GetTasks()
+        {
+            var sql = "SELECT * FROM Tasks";
+            return GetDt(sql);
+        }
+
+        private DataTable GetDt(string query)
         {
             var dt = new DataTable();
             using (SqlConnection conn = new(_connectionString))
             {
-                string query = "SELECT Code FROM Tasks";
                 SqlDataAdapter adapter = new(query, conn);
                 adapter.Fill(dt);
             }
+
             return dt;
         }
     }
