@@ -23,9 +23,9 @@ namespace ZTaskServices
             return _taskData.GetDepartmentsDt();
         }
 
-        public DataTable GetTasks()
+        public DataTable GetTasks(string code)
         {
-            return _taskData.GetTasks();
+            return _taskData.GetTasks(code);
         }
 
         public DataTable GetUsersDt()

@@ -288,7 +288,7 @@
             btnSave.TabIndex = 12;
             btnSave.Text = "&Save";
             btnSave.UseVisualStyleBackColor = true;
-            btnSave.Click += btnSave_Click;
+            btnSave.Click += BtnSave_Click;
             // 
             // btnDelete
             // 

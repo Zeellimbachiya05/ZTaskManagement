@@ -30,27 +30,66 @@ WHERE Name IS NOT NULL AND LTRIM(RTRIM(Name)) <> ''
         public void SaveTaskInfo(TaskModel task)
         {
             using SqlConnection con = new(_connectionString);
-            string sql = @"INSERT INTO Tasks (Code, Title, Description, AssignedToUser, Department, AssignedDate, DueDate,
-                                              Priority, Status, RemainderDate, CompletionDate, Notes)
-                               VALUES (@Code, @Title, @Description, @AssignedToUser, @Department, @AssignedDate, @DueDate,
-                                              @Priority, @Status, @RemainderDate, @CompletionDate, @Notes)";
 
-            using SqlCommand cmd = new(sql, con);
-            cmd.Parameters.AddWithValue("@Code", task.Code);
-            cmd.Parameters.AddWithValue("@Title", task.Title);
-            cmd.Parameters.AddWithValue("@Description", (object?)task.Description ?? DBNull.Value);
-            cmd.Parameters.AddWithValue("@AssignedToUser", (int?)task.AssignedToUser  == 0 ? DBNull.Value : (int)task.AssignedToUser);
-            cmd.Parameters.AddWithValue("@Department", (int?)task.Department == 0 ? DBNull.Value : (int)task.Department);
-            cmd.Parameters.AddWithValue("@AssignedDate", (object?)task.AssignedDate ?? DBNull.Value);
-            cmd.Parameters.AddWithValue("@DueDate", (object?)task.DueDate ?? DBNull.Value);
-            cmd.Parameters.AddWithValue("@Priority", (object?)task.Priority ?? DBNull.Value);
-            cmd.Parameters.AddWithValue("@Status", (object?)task.Status ?? DBNull.Value);
-            cmd.Parameters.AddWithValue("@RemainderDate", (object?)task.RemainderDate ?? DBNull.Value);
-            cmd.Parameters.AddWithValue("@CompletionDate", (object?)task.CompletionDate ?? DBNull.Value);
-            cmd.Parameters.AddWithValue("@Notes", task.Notes);
+            var sql = string.Empty;
+            if (IsRecordExist(task.Code))
+            {
+                sql = $@"
+UPDATE Tasks SET 
+Code = @Code,
+Title = @Title,
+Description = @Description,
+AssignedToUser = @AssignedToUser,
+Department = @Department,
+AssignedDate = @AssignedDate,
+DueDate = @DueDate,
+Priority = @Priority,
+Status = @Status,
+RemainderDate = @RemainderDate,
+CompletionDate = @CompletionDate,
+Notes = @Notes
+Where Code = '{task.Code}';
 
-            con.Open();
-            cmd.ExecuteNonQuery();
+";
+            }
+            else
+            {
+                sql = $@"
+    INSERT INTO Tasks (Code, Title, Description, AssignedToUser, Department, AssignedDate, DueDate,
+                       Priority, Status, RemainderDate, CompletionDate, Notes)
+               VALUES (@Code, @Title, @Description, @AssignedToUser, @Department, @AssignedDate, @DueDate,
+                       @Priority, @Status, @RemainderDate, @CompletionDate, @Notes)";
+            }
+                using SqlCommand cmd = new(sql, con);
+                cmd.Parameters.AddWithValue("@Code", task.Code);
+                cmd.Parameters.AddWithValue("@Title", task.Title);
+                cmd.Parameters.AddWithValue("@Description", (object?)task.Description ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@AssignedToUser", (int?)task.AssignedToUser  == 0 ? DBNull.Value : (int)task.AssignedToUser);
+                cmd.Parameters.AddWithValue("@Department", (int?)task.Department == 0 ? DBNull.Value : (int)task.Department);
+                cmd.Parameters.AddWithValue("@AssignedDate", (object?)task.AssignedDate ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@DueDate", (object?)task.DueDate ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@Priority", (object?)task.Priority ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@Status", (object?)task.Status ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@RemainderDate", (object?)task.RemainderDate ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@CompletionDate", (object?)task.CompletionDate ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@Notes", task.Notes);
+
+                con.Open();
+                cmd.ExecuteNonQuery();
+
+        }
+
+        private bool IsRecordExist(string code)
+        {
+            var sql = $@"
+Select Top 1 1 From Tasks Where Code = '{code}'
+";
+            using SqlConnection conn = new(_connectionString);
+            using SqlCommand cmd = new(sql, conn);
+            conn.Open();
+
+            return Convert.ToBoolean(cmd.ExecuteScalar());
+
         }
 
         public DataTable GetTasksCodesDt()
@@ -59,9 +98,9 @@ WHERE Name IS NOT NULL AND LTRIM(RTRIM(Name)) <> ''
             return GetDt(sql);
         }
 
-        public DataTable GetTasks()
+        public DataTable GetTasks(string code)
         {
-            var sql = "SELECT * FROM Tasks";
+            var sql = $"SELECT * FROM Tasks Where Code = '{code}'";
             return GetDt(sql);
         }
 

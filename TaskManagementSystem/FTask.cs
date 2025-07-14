@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml.Linq;
-using Microsoft.IdentityModel.Tokens;
+﻿using System.Data;
 using ZTaskModels;
 using ZTaskServices;
 
@@ -31,12 +21,8 @@ namespace ZTaskAccounts
 
         private void DelegateEventHandlers()
         {
-            btnSave.Click -= BtnSave_Click;
-            btnSave.Click += BtnSave_Click;
-            btnCancel.Click -= BtnCancel_Click;
-            btnCancel.Click += BtnCancel_Click;
-
             cmbCode.SelectedValueChanged -= CmbCode_ValueSelected;
+            cmbCode.SelectedValueChanged += CmbCode_ValueSelected;
         }
 
         #region Event Handlers
@@ -44,7 +30,34 @@ namespace ZTaskAccounts
         private void CmbCode_ValueSelected(object sender, EventArgs e)
         {
             var code = cmbCode.Text.Trim();
-            var dt = _taskServices.GetTasks();
+
+            if (string.IsNullOrWhiteSpace(code))
+                return;
+
+            var dt = _taskServices.GetTasks(code);
+
+            if (dt.Rows.Count == 0)
+                return;
+
+            FillForm(dt.Rows[0]);
+        }
+
+        private void FillForm(DataRow dr)
+        {
+            txtTitle.Text = dr["Title"].ToString();
+            rtxDescription.Text = dr["Description"].ToString();
+
+            cmbAssignedTo.SelectedValue = dr["AssignedToUser"];
+            cmbDepartment.SelectedValue = dr["Department"];
+            cmbPriority.SelectedItem = Enum.Parse(typeof(TaskPriority), dr["Priority"].ToString());
+            cmbStatus.SelectedItem = Enum.Parse(typeof(TaskStatus), dr["Status"].ToString());
+
+            dtpAssignedDate.Value = Convert.ToDateTime(dr["AssignedDate"]);
+            dtpDueDate.Value = Convert.ToDateTime(dr["DueDate"]);
+            dtpRemainderDate.Value = Convert.ToDateTime(dr["RemainderDate"]);
+            dtpCompletionDate.Value = Convert.ToDateTime(dr["CompletionDate"]);
+
+            txtNotes.Text = dr["Notes"].ToString();
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
