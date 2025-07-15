@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0446B777-9A8E-4717-B673-EC9476249818}|ZTaskData\\ZTaskData.csproj|c:\\users\\admin\\source\\repos\\taskmanagementsystem\\ztaskdata\\taskdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0446B777-9A8E-4717-B673-EC9476249818}|ZTaskData\\ZTaskData.csproj|solutionrelative:ztaskdata\\taskdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E48928BC-2E02-4A8F-9C9E-E5B3E8302F96}|TaskManagementSystem\\ZTaskAccounts.csproj|c:\\users\\admin\\source\\repos\\taskmanagementsystem\\taskmanagementsystem\\ftask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E48928BC-2E02-4A8F-9C9E-E5B3E8302F96}|TaskManagementSystem\\ZTaskAccounts.csproj|solutionrelative:taskmanagementsystem\\ftask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0446B777-9A8E-4717-B673-EC9476249818}|ZTaskData\\ZTaskData.csproj|c:\\users\\admin\\source\\repos\\taskmanagementsystem\\ztaskdata\\taskdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0446B777-9A8E-4717-B673-EC9476249818}|ZTaskData\\ZTaskData.csproj|solutionrelative:ztaskdata\\taskdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A6A2625F-A886-47CD-A953-797D623728E9}|ZTaskServices\\ZTaskServices.csproj|c:\\users\\admin\\source\\repos\\taskmanagementsystem\\ztaskservices\\taskservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,16 +58,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "TaskData.cs",
               "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\ZTaskData\\TaskData.cs",
               "RelativeDocumentMoniker": "ZTaskData\\TaskData.cs",
               "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\ZTaskData\\TaskData.cs",
               "RelativeToolTip": "ZTaskData\\TaskData.cs",
-              "ViewState": "AgIAAEEAAAAA//////8pwFQAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-11T15:37:25.55Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-11T15:37:25.55Z"
             },
             {
               "$type": "Document",
@@ -79,8 +78,7 @@
               "RelativeToolTip": "ZTaskServices\\TaskServices.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAAWwCoAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-11T15:38:23.355Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-11T15:38:23.355Z"
             },
             {
               "$type": "Document",
@@ -120,13 +118,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "FTask.cs",
               "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\TaskManagementSystem\\FTask.cs",
               "RelativeDocumentMoniker": "TaskManagementSystem\\FTask.cs",
               "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\TaskManagementSystem\\TaskManagementSystem\\FTask.cs",
               "RelativeToolTip": "TaskManagementSystem\\FTask.cs",
-              "ViewState": "AgIAAMkAAAAAAAAAAAA2wAEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGsAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-22T02:48:08.222Z",
               "EditorCaption": ""

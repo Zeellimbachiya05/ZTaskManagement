@@ -89,7 +89,6 @@ Select Top 1 1 From Tasks Where Code = '{code}'
             conn.Open();
 
             return Convert.ToBoolean(cmd.ExecuteScalar());
-
         }
 
         public DataTable GetTasksCodesDt()

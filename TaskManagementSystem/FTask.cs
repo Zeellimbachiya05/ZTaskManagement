@@ -21,14 +21,17 @@ namespace ZTaskAccounts
 
         private void DelegateEventHandlers()
         {
-            cmbCode.SelectedValueChanged -= CmbCode_ValueSelected;
-            cmbCode.SelectedValueChanged += CmbCode_ValueSelected;
+            cmbCode.SelectedIndexChanged -= CmbCode_ValueSelected;
+            cmbCode.SelectedIndexChanged += CmbCode_ValueSelected;
         }
 
         #region Event Handlers
 
         private void CmbCode_ValueSelected(object sender, EventArgs e)
         {
+            if (IsFormLoading)
+                return;
+
             var code = cmbCode.Text.Trim();
 
             if (string.IsNullOrWhiteSpace(code))
@@ -97,6 +100,14 @@ namespace ZTaskAccounts
         {
             Control? ctl = ActiveControl;
 
+            if (ctl is ComboBox cb)
+            {
+                if (cb.DroppedDown)
+                {
+                    return;
+                }
+            }
+
             if (ctl is not null)
             {
                 if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Down)
@@ -135,7 +146,8 @@ namespace ZTaskAccounts
             else
                 ClearForm();
         }
-        
+
+        bool IsFormLoading = true;
         private void FTask_Load(object sender, EventArgs e)
         {
             BindCodes();
@@ -143,6 +155,8 @@ namespace ZTaskAccounts
             BindDepartments();
             BindPriorityList();
             BindStatusList();
+
+            IsFormLoading = false;
         }
 
         #endregion
